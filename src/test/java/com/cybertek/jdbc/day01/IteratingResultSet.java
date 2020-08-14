@@ -17,5 +17,9 @@ public class IteratingResultSet {
         while (rs.next()){
             System.out.println(rs.getString(1)+" "+rs.getString(2));
         }
+
+        rs.close();
+        stmnt.close();
+        connection.close();
     }
 }
