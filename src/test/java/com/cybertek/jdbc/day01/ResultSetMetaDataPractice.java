@@ -20,7 +20,7 @@ public class ResultSetMetaDataPractice {
 
 
         for (int i = 1; columnCount>=i;  i++){
-            System.out.println(i+" "+rsmd.getColumnName(i));
+            System.out.print(i+" "+rsmd.getColumnName(i)+" ");
         }
 
 
