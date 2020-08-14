@@ -15,19 +15,23 @@ public class FirstAndLastRow {
         ResultSet rs = stmnt.executeQuery("select * from countries");
 
 
-        while (rs.next()){
-            if (rs.isFirst()){
-                System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
-            }
-        }
+        rs.next();
+        System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
 
-        while (rs.next()){
-            if (rs.isLast()){
-                System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
-            }
-        }
+        rs.next();
+        System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
 
+        rs.previous();
+        System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
 
+        rs.last();
+        System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
+
+        rs.first();
+        System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
+
+        rs.absolute(5);
+        System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
 
 
         rs.close();
