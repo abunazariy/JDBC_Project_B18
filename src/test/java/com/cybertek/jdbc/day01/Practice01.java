@@ -17,5 +17,6 @@ public class Practice01 {
         while (rs.next()){
             System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getInt(3));
         }
+
     }
 }
