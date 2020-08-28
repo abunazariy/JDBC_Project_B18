@@ -201,6 +201,24 @@ public static List<Map<String,String>> getAllDataAsListOfMap()
 
 add more..
 
+ SQL --- Programming language to access , manipulate relational database
+    MYSQL -- like Oracle Database , is a RDBMS --Relational Database Management System
+    Oracle SQL Developer is the IDE by Oracle to easily work with oracle databse
+    each database vendors usually have their own IDE and yet support different database
+    MYSQL database has its specific IDE called MYSQL Workbench
+    Oracle SQL Developer also support connecting to other databases by adding their driver
+    so if we connect to MYSQL database we provide mysql database driver so we can make connection
+Download MYSQL driver
+    go to sql developer
+        go to preference (mac user  COMMAND + comma(,) )
+        go to preference (windows user , tools . preference )
+        select database from right panel , expand it
+        you will see Third party database driver
+        Click on add entry -- find your driver file and click select
+
+
+
+
 
      */
 }

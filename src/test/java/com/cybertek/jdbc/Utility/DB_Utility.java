@@ -1,4 +1,4 @@
-package com.cybertek.jdbc;
+package com.cybertek.jdbc.Utility;
 
 import java.sql.*;
 import java.util.*;
@@ -11,13 +11,18 @@ public class DB_Utility {
     private static ResultSetMetaData rsmd;
 
     public static void createConnection(){
-        String connectionStr = "jdbc:oracle:thin:@3.93.69.55:1521:xe";
-        String username = "hr";
-        String password = "hr";
+        String connectionStr = Configuration_Reader.getProperty("db.url");
+        String username = Configuration_Reader.getProperty("hr.db.username");
+        String password = Configuration_Reader.getProperty("hr.db.password");
 
+        createConnection(connectionStr, username, password);
+    }
+
+    public static void createConnection(String connectionStr, String username, String password){
         try {
             connection = DriverManager.getConnection(connectionStr, username, password);
-        } catch (SQLException e) {
+
+        }catch (SQLException e){
             e.printStackTrace();
         }
     }
@@ -117,7 +122,7 @@ public class DB_Utility {
 
     public static void getAllDataInMap(){
 
-        Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new LinkedHashMap<>();
         try {
             rsmd = rs.getMetaData();
             rs.beforeFirst();
